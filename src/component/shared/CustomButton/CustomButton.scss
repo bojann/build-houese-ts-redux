@@ -1,0 +1,23 @@
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.btn-success {
+    background: #138a13;
+    color: #fff;
+
+    &:hover {
+        background: #066d06;
+    }
+}
+
+.btn-danger {
+    background: #d6610b;
+    color: #fff;
+
+    &:hover {
+        background: #723103;
+    }
+}

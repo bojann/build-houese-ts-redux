@@ -1,0 +1,21 @@
+.build-burger-controls {
+    width: 100%;
+    margin: auto;
+    background: orange;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    box-shadow: 0 2px 1px #ccc;
+}
+.order-btn {
+    background: #2260d4;
+    font-size: 1.3rem;
+    padding: 9px;
+    color: #fff;
+    margin: 20px 0 10px;
+    
+    &:hover {
+        background: #08358a;
+    }
+}

@@ -1,0 +1,31 @@
+.build-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+
+    span, button {
+        width: 80px;
+    }
+
+    .ingredient-label {
+        width: 120px;
+    }
+}
+.btn {
+    display: block;
+    padding: 6px 0;
+    font-weight: bold;
+    margin-left: 10px; 
+    cursor: pointer;
+}
+.btn-less {
+    background: orangered;
+    color: #e2dbdb;
+    border: 1px solid #b35938;
+}
+.btn-more {
+    background: olivedrab;
+    color: #e2dbdb;
+    border: 1px solid #b35938;
+}

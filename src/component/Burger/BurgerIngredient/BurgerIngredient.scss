@@ -1,0 +1,44 @@
+.top-bread {
+    height: 50px;
+    background: #e07c33;
+    width: 50%;
+    margin: 0 auto;
+    -webkit-border-radius: 25px 25px 0 0;
+    border-radius: 25px 25px 0 0;
+}
+.bottom-bread {
+    height: 50px;
+    background: #e07c33;
+    width: 50%;
+    margin: 0 auto;
+    -webkit-border-radius: 0 0 25px 25px;
+    border-radius: 0 0 25px 25px;
+}
+.salat {
+    height: 22px;
+    width: 52%;
+    background: #1da71d;
+    margin: 2px auto;
+    border-radius: 10px;
+}
+.meat {
+    height: 30px;
+    width: 54%;
+    background: #ad0c0c;
+    margin: 2px auto;
+    border-radius: 16px;
+}
+.bacon {
+    height: 22px;
+    width: 50%;
+    background: #e84e4e;
+    margin: 2px auto;
+    border-radius: 10px;
+}
+.cheese {
+    height: 22px;
+    width: 50%;
+    background: #ffe100;
+    margin: 2px auto;
+    border-radius: 10px;
+}

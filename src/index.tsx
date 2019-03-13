@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 // import { Provider } from 'react-redux';
 // import configureStore from 'state/store';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter} from 'react-router-dom';
+import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 
-const render = (Component: React.ComponentType)=> {
+const render = (Component: React.ComponentType) => {
   return ReactDOM.render(
     <BrowserRouter>
       <Component />
     </BrowserRouter>,
-    document.getElementById('root')
+    document.getElementById("root")
   );
 };
 
@@ -23,8 +23,8 @@ render(App);
 declare const module: any;
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp = require('./App').default;
+  module.hot.accept("./App", () => {
+    const NextApp = require("./App").default;
     render(NextApp);
   });
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactText } from "react";
 import Burger from "../../component/Burger/Burger";
 import BuildControls from "../../component/Burger/BuildControls/BuildControls";
 import Modal from '../../component/shared/Modal/Modal'
@@ -18,32 +18,41 @@ export default class BurgerBuilder extends React.Component {
       cheese: 1,
       meat: 2.2
     },
+    initialPrice: 5,
     orderPrice: 5,
     orderModalShow: false
   };
 
-  public handleAddIngredients = (label: string): void => {
+  public handleAddIngredients = (label: ReactText): void => {
     const newIngredients = {...this.state.ingredients};
-    const initialPrice = this.state.orderPrice;
+    const initialPrice = this.state.initialPrice;
     newIngredients[label] = newIngredients[label] + 1;
 
     const updatePriceSum = Object.keys(newIngredients)
       .map( ingKey => this.state.ingredientPrices[ingKey] * newIngredients[ingKey])
-      .reduce((acc, curr) => acc + curr, initialPrice)
+      .reduce((acc, curr) => {
+        const total = acc + curr;
+        return Number(total.toFixed(2));
+      }, initialPrice)
 
     this.setState({ingredients: newIngredients, orderPrice: updatePriceSum})
   };
 
-  public handleRemoveIngredients = (label: string): void => {
+  public handleRemoveIngredients = (label: ReactText): void => {
     const newIngredients = {...this.state.ingredients};
-    const initialPrice = this.state.orderPrice;
+    const initialPrice = this.state.initialPrice;
     newIngredients[label] = this.state.ingredients[label] - 1;
 
-    const updatePriceSum = Object.keys(newIngredients)
-      .map( ingKey => this.state.ingredientPrices[ingKey] * newIngredients[ingKey])
-      .reduce((acc, curr) => acc + curr, initialPrice)
+    if (this.state.ingredients[label]) {
+      const updatePriceSum = Object.keys(newIngredients)
+        .map( ingKey => this.state.ingredientPrices[ingKey] * newIngredients[ingKey])
+        .reduce((acc, curr) => {
+          const total = acc + curr;
+          return Number(total.toFixed(2));
+        }, initialPrice)
 
-    this.setState({ingredients: newIngredients, orderPrice: updatePriceSum})
+      this.setState({ingredients: newIngredients, orderPrice: updatePriceSum})      
+    }
   };
 
   public handleShowOrder = () => {

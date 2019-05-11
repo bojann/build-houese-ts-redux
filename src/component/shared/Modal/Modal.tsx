@@ -8,7 +8,7 @@ interface Props {
     handleModalClose: () => void
 }
 
-export default (props: Props) => {
+const Modal = (props: Props) => {
     const classes = props.orderModalShow ? 'modal modal-show' : 'modal modal-hidden';
 
     return (
@@ -20,3 +20,5 @@ export default (props: Props) => {
         </>
     )
 }
+
+export default Modal;

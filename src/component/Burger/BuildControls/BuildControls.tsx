@@ -14,8 +14,8 @@ export interface IngredientTypes {
 }
 
 export interface EvenHandlersTypes {
-  addIngredients: (label: string) => void;
-  removeIngredients: (label: string) => void;
+  addIngredients: (label: string | number) => void;
+  removeIngredients: (label: string | number) => void;
   handleShowOrder?: () => void
 }
 
@@ -29,7 +29,7 @@ export interface IngredientPrices {
   }
 }
 
-const buildControls = (props: IngredientTypes & EvenHandlersTypes & IngredientPrices) => {
+const BuildControls = (props: IngredientTypes & EvenHandlersTypes & IngredientPrices) => {
     const ingredients = props.ingredients;
     const renderControls = () => {
         return Object.keys(ingredients).map((item: string | any) => {
@@ -54,4 +54,4 @@ const buildControls = (props: IngredientTypes & EvenHandlersTypes & IngredientPr
     );
 };
 
-export default  buildControls;
+export default BuildControls;

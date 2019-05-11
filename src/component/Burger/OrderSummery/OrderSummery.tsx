@@ -24,7 +24,7 @@ const orderSummary = (props: IngredientTypes & {handleModalClose: () => void, ha
             <p><strong>Total price: {props.orderPrice}</strong></p>
             <button onClick={props.handleModalClose} className="btn-close">X</button>
             <CustomButton btnType="btn-danger" handleBtnClick={props.handleModalClose}>Cancel</CustomButton>
-            <CustomButton btnType="btn-success" handleBtnClick={props.handlePurchase}>Purchase</CustomButton>
+            <CustomButton btnType="btn-success" handleBtnClick={props.handlePurchase}>Go to Checkout</CustomButton>
         </>
     );
 };

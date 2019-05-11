@@ -15,7 +15,7 @@ interface IngredientsTypes {
   ingredients: Ingredients;
 }
 
-export default (props: IngredientsTypes) => {
+const Burger = (props: IngredientsTypes) => {
   const renderIngredients = () => {
     const ingredients = props.ingredients;
 
@@ -50,3 +50,5 @@ export default (props: IngredientsTypes) => {
     </div>
   );
 };
+
+export default Burger;

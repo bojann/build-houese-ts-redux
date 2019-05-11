@@ -7,20 +7,27 @@ export interface BuildBurgerTypes {
   price:  number;
 }
 
-export default (props: BuildBurgerTypes & EvenHandlersTypes) => {
-  const {label} = props;
+const BuildControl = (props: BuildBurgerTypes & EvenHandlersTypes) => {
+  const {
+    label,
+    price,
+    removeIngredients,
+    addIngredients
+  } = props;
 
   return (
     <div className="build-control">
       <span className="ingredient-label">
-        {props.label} ( ${props.price} )
+        {label} ( ${price} )
       </span>
-      <button className="btn btn-less" onClick={() => props.removeIngredients(label)}>
+      <button className="btn btn-less" onClick={() => removeIngredients(label)}>
         Less
       </button>
-      <button className="btn btn-more" onClick={() => props.addIngredients(label)}>
+      <button className="btn btn-more" onClick={() => addIngredients(label)}>
         More
       </button>
     </div>
   );
 };
+
+export default BuildControl;
